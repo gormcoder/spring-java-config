@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.validation.Validator;
@@ -15,7 +14,6 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +26,7 @@ public class AppConfig extends WebMvcConfigurationSupport {
     private static final String MESSAGE_SOURCE = "/WEB-INF/i18n/messages_CN.properties";
 
     @Override
-    public void configureMessageConverters( List<HttpMessageConverter<?>> converters ) {
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(mappingJacksonHttpMessageConverter());
         addDefaultHttpMessageConverters(converters);
     }
@@ -51,8 +49,8 @@ public class AppConfig extends WebMvcConfigurationSupport {
     }
 
     //避免IE执行AJAX时，返回JSON出现下载文件
-    @Bean(name="mappingJacksonHttpMessageConverter")
-    public MappingJackson2HttpMessageConverter mappingJacksonHttpMessageConverter(){
+    @Bean(name = "mappingJacksonHttpMessageConverter")
+    public MappingJackson2HttpMessageConverter mappingJacksonHttpMessageConverter() {
         MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter = new MappingJackson2HttpMessageConverter();
 
 //        MediaType mt = new MediaType("text/html;charset=UTF-8");

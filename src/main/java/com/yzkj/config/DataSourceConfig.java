@@ -19,7 +19,6 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource({"classpath:/properties/jdbc.properties"})
-
 public class DataSourceConfig {
 
     private static final Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
