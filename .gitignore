@@ -1,0 +1,10 @@
+/*
+!.gitignore
+!pom.xml
+!README.md
+!src/main/java
+!src/main/resources/mybatis
+!src/main/resources/properties
+!src/main/resources/log4j2.xml
+!src/main/webapp
+
