@@ -45,8 +45,6 @@ public class AccountController {
 
     @RequestMapping(value="/add")
     public int onAdd(Account account){
-
-
         return accountMapper.insert(account);
     }
 }

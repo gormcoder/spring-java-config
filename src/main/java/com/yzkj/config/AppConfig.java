@@ -20,7 +20,7 @@ import java.util.List;
  * Created by Gorm on 2017/2/1.
  */
 @Configuration
-@ComponentScan(basePackages = {"com.yzkj.controller","com.yzkj.service.impl"})
+@ComponentScan(basePackages = {"com.yzkj.controller","com.yzkj.service.impl","com.yzkj.mybatis.dao"})
 public class AppConfig extends WebMvcConfigurationSupport {
 
     private static final String MESSAGE_SOURCE = "/WEB-INF/i18n/messages_CN.properties";
