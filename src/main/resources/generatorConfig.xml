@@ -13,14 +13,14 @@
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
-        <javaModelGenerator targetPackage="com.yzkj.model" targetProject="/Users/Gorm/code/idea-work/password-box/src/main/java">
+        <javaModelGenerator targetPackage="com.yzkj.mybatis.model" targetProject="/Users/Gorm/code/idea-work/spring-java-config/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="mybatis.mapping" targetProject="/Users/Gorm/code/idea-work/password-box/src/main/resources">
+        <sqlMapGenerator targetPackage="mybatis.mapping" targetProject="/Users/Gorm/code/idea-work/spring-java-config/src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yzkj.dao" targetProject="/Users/Gorm/code/idea-work/password-box/src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yzkj.mybatis.dao" targetProject="/Users/Gorm/code/idea-work/spring-java-config/src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 

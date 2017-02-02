@@ -17,7 +17,7 @@ import javax.sql.DataSource;
  * Created by Gorm on 2017/2/1.
  */
 @Configuration
-@MapperScan("com.yzkj.dao")
+@MapperScan("com.yzkj.mybatis.dao")
 public class MybatisConfig {
 
     private static final Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);

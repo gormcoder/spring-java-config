@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yzkj.dao.AccountMapper">
-  <resultMap id="BaseResultMap" type="com.yzkj.model.Account">
+<mapper namespace="com.yzkj.mybatis.dao.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.yzkj.mybatis.model.Account">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="account" jdbcType="VARCHAR" property="account" />
-    <result column="sex" jdbcType="INTEGER" property="sex" />
-    <result column="weixinhao" jdbcType="VARCHAR" property="weixinhao" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nick_name" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="language" jdbcType="VARCHAR" property="language" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="avatarUrl" jdbcType="VARCHAR" property="avatarUrl" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, account, sex, weixinhao
+    id, nick_name, gender, language, city, province, country, avatarUrl
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -20,63 +24,105 @@
     delete from account
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.yzkj.model.Account">
-    insert into account (id, account, sex, 
-      weixinhao)
-    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, 
-      #{weixinhao,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.yzkj.mybatis.model.Account">
+    insert into account (id, nick_name, gender, 
+      language, city, province, 
+      country, avatarUrl)
+    values (#{id,jdbcType=INTEGER}, #{nick_name,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER}, 
+      #{language,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.yzkj.model.Account">
+  <insert id="insertSelective" parameterType="com.yzkj.mybatis.model.Account">
     insert into account
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="account != null">
-        account,
+      <if test="nick_name != null">
+        nick_name,
       </if>
-      <if test="sex != null">
-        sex,
+      <if test="gender != null">
+        gender,
       </if>
-      <if test="weixinhao != null">
-        weixinhao,
+      <if test="language != null">
+        language,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="country != null">
+        country,
+      </if>
+      <if test="avatarUrl != null">
+        avatarUrl,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="account != null">
-        #{account,jdbcType=VARCHAR},
+      <if test="nick_name != null">
+        #{nick_name,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null">
-        #{sex,jdbcType=INTEGER},
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
       </if>
-      <if test="weixinhao != null">
-        #{weixinhao,jdbcType=VARCHAR},
+      <if test="language != null">
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarUrl != null">
+        #{avatarUrl,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yzkj.model.Account">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yzkj.mybatis.model.Account">
     update account
     <set>
-      <if test="account != null">
-        account = #{account,jdbcType=VARCHAR},
+      <if test="nick_name != null">
+        nick_name = #{nick_name,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null">
-        sex = #{sex,jdbcType=INTEGER},
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
       </if>
-      <if test="weixinhao != null">
-        weixinhao = #{weixinhao,jdbcType=VARCHAR},
+      <if test="language != null">
+        language = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarUrl != null">
+        avatarUrl = #{avatarUrl,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yzkj.model.Account">
+  <update id="updateByPrimaryKey" parameterType="com.yzkj.mybatis.model.Account">
     update account
-    set account = #{account,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=INTEGER},
-      weixinhao = #{weixinhao,jdbcType=VARCHAR}
+    set nick_name = #{nick_name,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=INTEGER},
+      language = #{language,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      avatarUrl = #{avatarUrl,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
